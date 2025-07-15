@@ -1,9 +1,6 @@
-```markdown
 # Task Management System
 
 A complete **Task Management Web App**, where **admins manage users and assign tasks**, and **users view & update task statuses** - with email notifications and role-based access control. Built with **Node.js**, **Express**, **MongoDB**, and **HTML/CSS/JS**.
-
----
 
 ## Features
 
@@ -26,8 +23,6 @@ A complete **Task Management Web App**, where **admins manage users and assign t
 - Nodemailer email integration
 - Mongoose models & clean routes
 
----
-
 ## 🛠️ Tech Stack
 
 **Frontend:**
@@ -40,48 +35,12 @@ A complete **Task Management Web App**, where **admins manage users and assign t
 - JSON Web Tokens (JWT)
 - Nodemailer (Gmail SMTP)
 
----
-
-## Project Structure
-
-```
-
-task-manager/
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── utils/
-│   └── server.js 
-│
-├── frontend/          # User interface
-│   ├── index.html
-│   ├── tasks.html
-│   ├── css/
-│   └── js/
-│
-├── admin/             # Admin panel
-│   ├── dashboard.html
-│   ├── users.html
-│   ├── tasks.html
-│   ├── css/
-│   └── js/
-│
-├── .env               # Environment variables
-├── package.json
-└── README.md
-
-````
-
----
-
-## ⚙️ Setup Instructions
+## Setup Instructions
 
 ### 1. Clone the repository
+
 ```bash
-git clone https://github.com/Onesmus123/Task-Manager.git.git
+git clone https://github.com/Onesmus123/Task-Manager.git
 cd task-manager
 ````
 
