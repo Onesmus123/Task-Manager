@@ -23,7 +23,7 @@ A complete **Task Management Web App**, where **admins manage users and assign t
 - Nodemailer email integration
 - Mongoose models & clean routes
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend:**
 - HTML + CSS
