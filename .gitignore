@@ -1,0 +1,6 @@
+# Ignore environment variables and node_modules
+.env
+node_modules/
+db-dump/
+.DS_Store
+*.log

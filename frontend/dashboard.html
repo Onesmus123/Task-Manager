@@ -1,0 +1,45 @@
+<!-- Path: frontend/dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+
+  <!-- Link to shared stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    
+    <!-- Top navigation bar with title and logout button -->
+    <div class="navbar">
+      <div class="nav-title">User Dashboard</div>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Task list container -->
+    <div class="container">
+      <h2>Your Tasks</h2>
+
+      <!-- Task table structure -->
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Deadline</th>
+            <th>Status</th>
+            <th>Update</th>
+          </tr>
+        </thead>
+        <tbody id="taskList"></tbody> <!-- Dynamically populated -->
+      </table>
+    </div>
+  </div>
+
+  <!-- Link to dashboard functionality script -->
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

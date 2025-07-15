@@ -1,0 +1,65 @@
+<!-- Path: frontend/register.html -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+
+  <!-- Link to shared styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Registration form wrapper -->
+  <div class="container">
+    <!-- Form heading -->
+    <div class="title">User Registration Form</div>
+
+    <div class="content">
+      <!-- Registration form -->
+      <form id="registerForm">
+        <div class="user-details">
+          <!-- Full name input -->
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+
+          <!-- Email input -->
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+
+          <!-- Phone number input -->
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="phone" placeholder="Enter your number" required>
+          </div>
+
+          <!-- Password input -->
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="password" placeholder="Enter your password" required>
+          </div>
+        </div>
+
+        <!-- Hidden role value (defaults to 'user') -->
+        <input type="hidden" name="role" value="user">
+
+        <!-- Submit button -->
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+
+        <!-- Redirect to login page -->
+        <p style="margin-top: 15px;">Already have an account? <a href="login.html">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script to handle registration logic -->
+  <script src="js/register.js"></script>
+</body>
+</html>

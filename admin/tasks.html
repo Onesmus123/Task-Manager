@@ -1,0 +1,115 @@
+<!-- Path: admin/tasks.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assign Task</title>
+
+  <!-- Link to shared admin stylesheet -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- Top navigation bar -->
+  <div class="navbar">
+    <span class="nav-title">Admin Panel</span>
+
+    <!-- Navbar links (desktop) -->
+    <div class="nav-links">
+      <a href="users.html">Users</a>
+      <a href="tasks.html">Tasks</a>
+      <button onclick="toggleDarkMode()">🌙</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Sidebar toggle button (mobile) -->
+    <button class="nav-toggle" onclick="toggleSidebar()">☰</button>
+  </div>
+
+  <!-- Sidebar menu (mobile view) -->
+  <div class="sidebar" id="sidebar">
+    <a href="users.html">Users</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="#" onclick="toggleDarkMode()">🌙 Mode</a>
+    <a href="#" onclick="logout()">Logout</a>
+  </div>
+
+  <!-- Sidebar/Dark Mode/Logout scripts -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.style.display = sidebar.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'login.html';
+    }
+
+    window.onload = () => {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark');
+      }
+    };
+  </script>
+
+  <!-- Task assignment form -->
+  <div class="form-container">
+    <h2>Assign Task to User</h2>
+    <form id="assignTaskForm">
+      <input name="title" placeholder="Task Title" required />
+      <textarea name="description" placeholder="Description" required></textarea>
+      <input name="deadline" type="date" required />
+      <select name="assignedTo" id="userSelect" required></select>
+      <button type="submit">Assign</button>
+    </form>
+  </div>
+
+  <!-- Assigned task list table -->
+  <div class="container">
+    <h2>All Assigned Tasks</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Deadline</th>
+          <th>Status</th>
+          <th>Assigned To</th>
+        </tr>
+      </thead>
+      <tbody id="taskTable"></tbody>
+    </table>
+  </div>
+
+  <!-- Load JS logic for task assignment -->
+  <script src="js/admin-tasks.js"></script>
+
+  <!-- Optional: JS function to create task row manually -->
+  <script>
+    const taskTable = document.getElementById('taskTable');
+
+    function createTaskRow(task) {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td data-label="Title">${task.title}</td>
+        <td data-label="Description">${task.description}</td>
+        <td data-label="Deadline">${new Date(task.deadline).toLocaleDateString()}</td>
+        <td data-label="Status">${task.status}</td>
+        <td data-label="Assigned To">
+          ${task.assignedTo?.name || 'N/A'} (${task.assignedTo?.email || 'N/A'})
+        </td>
+      `;
+      taskTable.appendChild(row);
+    }
+  </script>
+
+</body>
+</html>

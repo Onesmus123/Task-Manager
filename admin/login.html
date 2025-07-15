@@ -1,0 +1,33 @@
+<!-- Path: admin/login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+
+  <!-- Link to shared admin CSS styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Admin login form container -->
+  <div class="form-container">
+    <h2>Admin Login</h2>
+
+    <!-- Login form -->
+    <form id="adminLoginForm">
+      <input type="email" name="email" placeholder="Admin Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <!-- Link to admin registration page -->
+    <p>Don't have an admin account? <a href="register.html">Register here</a></p>
+  </div>
+
+  <!-- Admin login functionality script -->
+  <script src="js/login.js"></script>
+</body>
+</html>

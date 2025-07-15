@@ -1,0 +1,50 @@
+<!-- Path: frontend/login.html -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+  <!-- Link to global stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Login form container -->
+  <div class="container">
+    <!-- Form title -->
+    <div class="title">User Login</div>
+    
+    <!-- Login form -->
+    <div class="content">
+      <form id="loginForm">
+        <div class="user-details">
+          <!-- Email input -->
+          <div class="input-box" style="width: 100%;">
+            <span class="details">Email</span>
+            <input name="email" type="email" placeholder="Enter your email" required />
+          </div>
+
+          <!-- Password input -->
+          <div class="input-box" style="width: 100%;">
+            <span class="details">Password</span>
+            <input name="password" type="password" placeholder="Enter your password" required />
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="button">
+          <input type="submit" value="Login" />
+        </div>
+
+        <!-- Redirect to registration -->
+        <p style="margin-top: 15px;">Don't have an account? <a href="register.html">Register</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script to handle login functionality -->
+  <script src="js/login.js"></script>
+</body>
+</html>

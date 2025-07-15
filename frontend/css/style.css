@@ -1,0 +1,281 @@
+/*Path: frontend/css/style.css* /
+
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset default spacing and apply global font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Full-page background gradient and padding */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  padding: 20px;
+}
+
+/* Ensures vertical stacking of navbar and content */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Common container for forms and dashboard content */
+.container,
+.form-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  padding: 30px;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
+
+/* Headings with decorative underlines */
+h2, .title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+}
+.title::before, h2::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+/* Form vertical layout */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Standard input and button styling */
+input, textarea, select, button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+}
+
+/* Highlight input on focus */
+input:focus {
+  border-color: #9b59b6;
+}
+
+/* Gradient button style with smooth hover */
+button, input[type="submit"] {
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+/* Paragraph and link styling */
+p {
+  text-align: center;
+  font-size: 14px;
+}
+p a {
+  color: #9b59b6;
+  text-decoration: none;
+}
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Home/index call-to-action buttons */
+.center {
+  text-align: center;
+}
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.btn:hover {
+  background: #218838;
+}
+
+/* Dashboard wrapper styles */
+.dashboard-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.dashboard-header h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Red logout button for emphasis */
+.logout-btn {
+  background-color: #dc3545;
+}
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Table styling for task display */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background: #6c63ff;
+  color: #fff;
+}
+td {
+  background: #f9f9f9;
+}
+
+/* Responsive table for smaller screens */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+
+  td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    font-weight: 600;
+    width: calc(50% - 30px);
+    white-space: nowrap;
+    color: #555;
+  }
+
+  td:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Mobile adjustments for layout elements */
+@media (max-width: 600px) {
+  .container, .form-container {
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h2 {
+    margin-bottom: 10px;
+  }
+}
+
+/* Top navbar with equal spacing for title and logout */
+.navbar {
+  width: 85%;
+  max-width: 1200px;
+  background: #fff;
+  padding: 15px 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Navbar text and button alignment */
+.navbar .nav-title,
+.navbar button {
+  width: 50%;
+  text-align: center;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Navbar title specific styling */
+.navbar .nav-title {
+  margin-left: 20px;
+  width: 50%;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Navbar logout button gradient and hover effect */
+.navbar button {
+  cursor: pointer;
+  width: 30%;
+  margin-right: 20px;
+  color: white;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  padding: 12px 0;
+  border-left: 1px solid #eee;
+  transition: background 0.3s ease;
+  font-size: 14px;
+}
+
+.navbar button:hover {
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
